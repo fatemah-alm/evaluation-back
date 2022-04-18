@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from projects.models import Project
-# Create your models here.
+
+
 
 class Semester(models.Model):
     name = models.CharField(max_length=120)
@@ -15,6 +15,7 @@ class Semester(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=120)
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
-    # teams
     def __str__(self):
         return self.name
+    
+    

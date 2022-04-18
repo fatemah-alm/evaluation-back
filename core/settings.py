@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'djoser',
     'api',
     'semesters',
-    'projects'
+    'projects',
+    'teams'
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
