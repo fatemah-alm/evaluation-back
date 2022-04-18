@@ -11,7 +11,6 @@ class TeamsListSerializer(serializers.ModelSerializer):
         
         
 class TeamDetailSerializer(serializers.ModelSerializer):
-    # projects = serializers.SerializerMethodField(method_name='getProjects')
     class Meta:
         model = Team
         fields = '__all__'
