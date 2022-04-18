@@ -1,6 +1,6 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import Semester
+from .models import Semester, Project
 from django.contrib.auth.models import User
 
 
@@ -14,3 +14,18 @@ class SemesterListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Semester
         fields = '__all__'
+        
+        
+class SemesterDetailSerializer(serializers.ModelSerializer):
+    projects = serializers.SerializerMethodField(method_name='getProjects')
+    class Meta:
+        model = Semester
+        fields = '__all__'
+        
+    def getProjects(self,project:Project):
+        semester = []
+        for project in project.project_set.all():
+            semester.append(project.name)
+        return semester
+    
+    
