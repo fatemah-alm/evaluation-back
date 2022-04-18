@@ -2,11 +2,10 @@ from dataclasses import fields
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from semesters.models import Project
-# from semesters.models import Team
-from teams.models import Team
+from teams.serializers import TeamsListSerializer
 
 class ProjectListSerializer(serializers.ModelSerializer):
-    teams = serializers.StringRelatedField(many=True)
+    teams = TeamsListSerializer(many=True, read_only=True)
 
     class Meta:
         model = Project
@@ -14,7 +13,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
         
         
 class ProjectDetailSerializer(serializers.ModelSerializer):
-    teams = serializers.StringRelatedField(many=True)
+    teams = TeamsListSerializer(many=True, read_only=True)
 
     class Meta:
         model = Project
