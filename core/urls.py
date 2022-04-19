@@ -21,5 +21,6 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('semesters/',include('semesters.urls')),
     path('projects/',include('projects.urls')),
-    path('teams/',include('teams.urls') )
+    path('teams/',include('teams.urls') ),
+    path('criterias/',include('criteria.urls') ),
 ]

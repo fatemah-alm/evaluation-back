@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'api',
     'semesters',
     'projects',
-    'teams'
+    'teams',
+    'criteria'
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
