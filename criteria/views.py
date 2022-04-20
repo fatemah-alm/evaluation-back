@@ -14,3 +14,6 @@ class CriteriaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Criteria.objects.all()
     serializer_class = CriteriaDetailSerializer
     lookup_field = 'id'
+    
+    
+    

@@ -6,4 +6,5 @@ urlpatterns = [
     path('', CriteriaListView.as_view(), name='criteria-list'),
     path('<int:id>', CriteriaDetailView.as_view(), name='criteria-detail' ),
 
+
 ]
