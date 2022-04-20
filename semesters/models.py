@@ -4,6 +4,7 @@ from criteria.models import Criteria
 
 
 
+
 class Semester(models.Model):
     name = models.CharField(max_length=120)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -16,7 +17,10 @@ class Semester(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=120)
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
-    criterias = models.ForeignKey(Criteria, on_delete=models.CASCADE, null=True)
+    weight = models.IntegerField(null=True)
+    criterias = models.ManyToManyField(Criteria)
+    
+
     def __str__(self):
         return self.name
     

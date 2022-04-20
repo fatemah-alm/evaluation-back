@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from semesters.models import Project
 from .models import Team
 from django.contrib.auth.models import User
 
