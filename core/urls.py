@@ -23,4 +23,6 @@ urlpatterns = [
     path('projects/',include('projects.urls')),
     path('teams/',include('teams.urls') ),
     path('criterias/',include('criteria.urls') ),
+    path('judges/',include('judge.urls')),
+    path('evaluation/',include('evalutaion.urls'))
 ]
