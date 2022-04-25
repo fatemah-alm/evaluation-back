@@ -19,6 +19,8 @@ class Project(models.Model):
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     weight = models.IntegerField(null=True)
     criterias = models.ManyToManyField(Criteria)
+    isLocked = models.BooleanField(default=False)
+    
     
 
     def __str__(self):

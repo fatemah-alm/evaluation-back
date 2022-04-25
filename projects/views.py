@@ -6,17 +6,16 @@ from .serializers import ProjectListSerializer, ProjectDetailSerializer
 # Create your views here.
 
 class ProjectListView(ListCreateAPIView):
-    queryset = Project.objects.prefetch_related('teams')
+    queryset = Project.objects.all()
     def get_serializer_class(self):
         if(self.request.method in SAFE_METHODS):
             return ProjectDetailSerializer
         else:
             return ProjectListSerializer
-    lookup_field = 'id'
     
    
 
 class ProjectDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Project.objects.prefetch_related('teams')
+    queryset = Project.objects.all()
     serializer_class = ProjectDetailSerializer
     lookup_field = 'id'

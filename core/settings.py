@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'semesters',
     'projects',
     'teams',
-    'criteria'
+    'criteria',
+    'judge',
+    'evalutaion'
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
